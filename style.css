@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    padding: 20px;
+    font-size: 2rem;
+}
+.cases{
+    border: 1px solid;
+    display: grid;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 5px;
+    grid-template-columns: repeat(3, 5rem);
+    grid-template-rows: repeat(3, 5rem);
+}
+.cases .case{
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.score{
+    padding: 20px;
+    font-size: 1.2rem;
+}
+.score p{
+    padding: 10px;
+}
