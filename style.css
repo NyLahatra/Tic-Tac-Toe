@@ -17,9 +17,9 @@ h2{
 .cases{
     border: 1px solid;
     display: grid;
-    padding: 10px;
+    padding: 15px;
     gap: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     grid-template-columns: repeat(3, 5rem);
     grid-template-rows: repeat(3, 5rem);
 }
@@ -32,11 +32,28 @@ h2{
     align-items: center;
     font-size: 3rem;
     font-weight: bold;
+    box-shadow: 4px 5px 4px;
+    transition: all 0.5s ease-in;
+
+    &:active{
+        transform: translateY(25px);
+    }
 }
 .score{
-    padding: 20px;
     font-size: 1.2rem;
 }
 .score p{
     padding: 10px;
+}
+#alert{
+    padding-bottom: 10px;
+}
+button{
+    border: 1px solid;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
 }

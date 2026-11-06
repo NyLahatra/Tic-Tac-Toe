@@ -5,6 +5,7 @@ const score1 = document.getElementById("score1");
 const score2 = document.getElementById("score2");
 const scoreNul = document.getElementById("scoreNul");
 const nomGagnant = document.getElementById("alert");
+const boutonReset = document.getElementById("reset");
 
 const state = {
     joueurEnCours : 1,
@@ -37,7 +38,7 @@ const resetState = () => {
 }
 
 const verifierVictoire = () => {
-    // COMBINAISON GAGNANT
+    // COMBINAISON GAGNANTE
     if (
         (state.c1 == state.c2 && state.c2 == state.c3 && state.c1 > 0) || 
         (state.c4 == state.c5 && state.c5 == state.c6 && state.c4 > 0) ||
@@ -87,22 +88,19 @@ const jouerCase =(e) => {
             state.score2++;
             score2.textContent = state.score2;
         }
-        resetState();
-        cases.forEach(c => c.textContent = "");
     }
     else if (Victoire === null){
         nomGagnant.textContent = "Match nul";
         state.scoreNul++;
         scoreNul.textContent = state.scoreNul;
-        resetState();
-        cases.forEach(c => c.textContent = "");
-        console.log(scoreNul);
-    }else if (Victoire === false){
+    }
+    else if (Victoire === false){
         if (state.joueurEnCours === 1) {
             e.target.textContent = "X";
             state.joueurEnCours = 2;
             joueur.textContent = "2";
-        } else{
+        } 
+        else{
             e.target.textContent = "O";
             state.joueurEnCours = 1;
             joueur.textContent = "1";
@@ -110,6 +108,12 @@ const jouerCase =(e) => {
         nomGagnant.textContent = "";
     }
 };
+
+// BOUTON NOUVEAU JEU
+boutonReset.addEventListener("click", () => {
+    resetState();
+    cases.forEach(c => c.textContent = "");
+});
 
 // POUR QUE LES CASES ENTTENDENT L'EVENEMENTS CLICK
 cases.forEach((cases) => {
